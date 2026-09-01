@@ -1,0 +1,116 @@
+---
+import '../styles/global.css';
+
+const actions = [
+  ['01', 'Representamos', 'Defendemos los intereses de los medios vecinales y promovemos su participación en la vida institucional de la Ciudad.'],
+  ['02', 'Capacitamos', 'Generamos oportunidades de formación y profesionalización para periodistas, editores, comunicadores y productores.'],
+  ['03', 'Conectamos', 'Creamos espacios de cooperación entre medios, asociaciones, instituciones, empresas, sindicatos y organizaciones sociales.'],
+  ['04', 'Promovemos', 'Impulsamos la difusión y el crecimiento económico de los medios en sus diferentes soportes.'],
+  ['05', 'Jerarquizamos', 'Consolidamos el valor del periodismo de cercanía como servicio esencial para las comunidades.']
+];
+
+const topics = [
+  'Actualidad barrial y comunal', 'Vida institucional de la Ciudad', 'Defensa del consumidor',
+  'Comercios y servicios de cercanía', 'Educación y apoyo escolar', 'Transporte y movilidad',
+  'Salud y bienestar', 'Cultura y entretenimiento', 'Deportes', 'Turismo y patrimonio urbano'
+];
+
+const media = [
+  ['P', 'Periódicos zonales', 'Publicaciones gráficas distribuidas en los barrios, con información de interés para vecinos, comercios e instituciones.'],
+  ['W', 'Webs periodísticas', 'Medios digitales que brindan información actualizada y contenidos especializados para audiencias locales.'],
+  ['R', 'Producciones radiales', 'Programas y espacios periodísticos que amplifican las voces, historias y problemáticas de las comunidades.']
+];
+
+const advertising = [
+  ['WEB', 'Publicidad web', 'Banners y campañas digitales adaptables a computadoras y dispositivos móviles.'],
+  ['PAPEL', 'Publicidad gráfica', 'Avisos en periódicos de distribución zonal con presencia directa en los barrios.'],
+  ['AIRE', 'Publicidad radial', 'Spots y menciones integradas a producciones periodísticas de cercanía.']
+];
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="La voz de los barrios de Buenos Aires. Una red de más de 50 medios vecinales en las 15 comunas de la Ciudad." />
+    <meta name="theme-color" content="#ed1c24" />
+    <title>AMV — Asociación de Medios Vecinales</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="AMV, volver al inicio">
+        <img src="/logo-amv.png" alt="" />
+        <span>Asociación de<br />Medios Vecinales</span>
+      </a>
+      <nav class="desktop-nav" aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a><a href="#quienes">Quiénes somos</a><a href="#medios">Nuestros medios</a>
+        <a href="#hacemos">Qué hacemos</a><a href="#publicidad">Publicidad</a><a href="#contacto">Contacto</a>
+      </nav>
+      <a class="header-cta" href="#contacto">Asociarse <span>↗</span></a>
+      <details class="mobile-nav">
+        <summary aria-label="Abrir menú">Menú</summary>
+        <div><a href="#quienes">Quiénes somos</a><a href="#medios">Nuestros medios</a><a href="#hacemos">Qué hacemos</a><a href="#publicidad">Publicidad</a><a href="#contacto">Contacto</a></div>
+      </details>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> Asociación de Medios Vecinales</p>
+          <h1>La voz de los barrios <em>de Buenos Aires</em></h1>
+          <p class="hero-lead">La AMV reúne, promueve y acompaña a más de 50 medios dedicados a informar sobre la vida cotidiana e institucional de las 15 comunas de la Ciudad.</p>
+          <p class="hero-detail">Periódicos de distribución zonal, webs periodísticas y producciones radiales que construyen comunidad desde la cercanía.</p>
+          <div class="button-row"><a class="button primary" href="#medios">Conocé nuestros medios <span>↓</span></a><a class="button secondary" href="#contacto">Sumate a la AMV <span>↗</span></a></div>
+        </div>
+        <div class="hero-visual" aria-label="Una red que conecta las 15 comunas porteñas">
+          <div class="sun"></div>
+          <div class="city-grid" aria-hidden="true">{Array.from({length: 28}).map((_, i) => <span></span>)}</div>
+          <div class="hero-seal"><strong>+50</strong><span>medios<br />vecinales</span></div>
+          <p class="vertical-note">15 COMUNAS · UNA MISMA RED</p>
+          <div class="ticker"><span>Información local</span><i>•</i><span>Identidad porteña</span><i>•</i><span>Comunidad</span></div>
+        </div>
+      </section>
+
+      <section class="intro section" id="quienes">
+        <div class="section-heading"><p class="kicker">Una red de comunicación cercana</p><h2>Información local con <em>identidad porteña</em></h2></div>
+        <div class="intro-body"><p class="large-copy">La AMV nació en 2016 como un espacio de cooperación, reflexión y desarrollo para editores, periodistas, comunicadores y productores de medios vecinales.</p><div><p>Nuestra organización trabaja para fortalecer la calidad periodística, impulsar la profesionalización del sector y jerarquizar la comunicación que requiere la vida institucional de la Ciudad.</p><p>Porque ser un medio vecinal no significa solamente contar lo que pasa en una zona. Significa conocer a sus habitantes, comprender sus necesidades y acompañar la identidad de cada comunidad.</p></div></div>
+      </section>
+
+      <section class="actions section" id="hacemos">
+        <div class="section-heading light"><p class="kicker">Lo que hacemos</p><h2>Fortalecemos el<br /><em>periodismo vecinal</em></h2></div>
+        <div class="action-list">{actions.map(([num, title, text]) => <article><span>{num}</span><h3>{title}</h3><p>{text}</p><b aria-hidden="true">↗</b></article>)}</div>
+      </section>
+
+      <section class="topics section">
+        <div class="topics-copy"><p class="kicker">Información que acompaña la vida cotidiana</p><h2>Los temas que importan, <em>cerca de los vecinos</em></h2><p>Los medios que integran la AMV informan sobre los asuntos que atraviesan la vida diaria de los porteños.</p><p class="note">Cada medio aporta una mirada propia, construida desde el conocimiento del territorio y el vínculo directo con su comunidad.</p></div>
+        <ol class="topic-list">{topics.map((topic, i) => <li><span>{String(i + 1).padStart(2, '0')}</span>{topic}</li>)}</ol>
+      </section>
+
+      <section class="media section" id="medios">
+        <div class="section-heading"><p class="kicker">Nuestros medios</p><h2>Una red diversa,<br /><em>una identidad compartida</em></h2></div>
+        <div class="media-grid">{media.map(([letter, title, text]) => <article><div class="media-mark">{letter}<span>AMV</span></div><div><h3>{title}</h3><p>{text}</p></div></article>)}</div>
+      </section>
+
+      <section class="purpose section">
+        <article><span class="purpose-num">01</span><p class="kicker">Misión</p><h2>Mejorar la calidad del periodismo vecinal.</h2><p>Generar oportunidades innovadoras mediante la capacitación profesional, el compromiso con los estándares éticos y la defensa de la libertad de expresión.</p><p>Trabajamos junto con asociaciones, empresas, sindicatos, organismos públicos y organizaciones sin fines de lucro para fortalecer a los medios como promotores de la cultura y la identidad de sus comunidades.</p></article>
+        <article><span class="purpose-num">02</span><p class="kicker">Visión</p><h2>Ser la asociación referente de la comunicación cercana.</h2><p>Impulsar el desarrollo, la continuidad y el fortalecimiento de los medios más próximos a los vecinos de la Ciudad de Buenos Aires.</p><p>Aspiramos a que el periodismo vecinal ocupe un lugar cada vez más relevante en las conversaciones y decisiones que construyen el futuro de la Ciudad.</p></article>
+      </section>
+
+      <section class="values section"><div><p class="kicker">Nuestros valores</p><h2>Periodismo con <em>compromiso</em></h2></div><p>Nos guían la <strong>ética</strong>, la <strong>responsabilidad</strong>, el <strong>respeto</strong>, el trabajo en equipo, la diversidad y la defensa de la libertad de expresión. Creemos en una comunicación plural, profesional y profundamente conectada con las personas.</p></section>
+
+      <section class="advertising section" id="publicidad">
+        <div class="section-heading light"><p class="kicker">Publicidad</p><h2>Tu mensaje, cerca<br /><em>de la comunidad</em></h2><p>Los medios de la AMV permiten que empresas, instituciones y organizaciones se comuniquen con audiencias locales a través de múltiples formatos.</p></div>
+        <div class="ad-grid">{advertising.map(([tag, title, text]) => <article><span>{tag}</span><h3>{title}</h3><p>{text}</p></article>)}</div>
+        <p class="ad-foot">Diseñamos propuestas multiplataforma de acuerdo con los objetivos, el territorio y el público de cada campaña.</p>
+      </section>
+
+      <section class="closing" id="contacto">
+        <div class="closing-copy"><p class="kicker">Conversemos</p><h2>La Ciudad también se cuenta <em>desde sus barrios</em></h2><p>En cada comuna hay historias, necesidades y voces que merecen ser escuchadas. Los medios vecinales las convierten en información, identidad y participación ciudadana.</p><strong>AMV. Más cerca de los medios. Más cerca de los vecinos.</strong><a class="button primary cream" href="mailto:amvpresidencia@gmail.com">Contactanos <span>↗</span></a></div>
+        <div class="contact-card"><img src="/logo-amv.png" alt="Logo de AMV" /><p>¿Querés asociarte, conocer nuestros medios o desarrollar una campaña de comunicación?</p><a href="mailto:amvpresidencia@gmail.com">amvpresidencia@gmail.com</a></div>
+      </section>
+    </main>
+
+    <footer><a class="brand footer-brand" href="#inicio"><img src="/logo-amv.png" alt="" /><span>Asociación de<br />Medios Vecinales</span></a><p>Buenos Aires, Argentina · Desde 2016</p><a href="#inicio">Volver arriba ↑</a></footer>
+  </body>
+</html>
