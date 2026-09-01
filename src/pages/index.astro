@@ -26,16 +26,68 @@ const advertising = [
   ['PAPEL', 'Publicidad gráfica', 'Avisos en periódicos de distribución zonal con presencia directa en los barrios.'],
   ['AIRE', 'Publicidad radial', 'Spots y menciones integradas a producciones periodísticas de cercanía.']
 ];
+
+const canonicalURL = 'https://amvcaba.com.ar/';
+const socialImage = 'https://amvcaba.com.ar/logo-amv.png';
+const pageTitle = 'AMV | Asociación de Medios Vecinales de Buenos Aires';
+const pageDescription = 'La AMV reúne, promueve y acompaña a más de 50 medios vecinales que informan sobre la vida cotidiana e institucional de las 15 comunas de Buenos Aires.';
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Asociación de Medios Vecinales',
+  alternateName: 'AMV',
+  url: canonicalURL,
+  logo: socialImage,
+  email: 'amvpresidencia@gmail.com',
+  foundingDate: '2016',
+  description: pageDescription,
+  areaServed: {
+    '@type': 'City',
+    name: 'Ciudad Autónoma de Buenos Aires'
+  }
+};
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es-AR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="description" content="La voz de los barrios de Buenos Aires. Una red de más de 50 medios vecinales en las 15 comunas de la Ciudad." />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <meta name="author" content="Asociación de Medios Vecinales" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="keywords" content="medios vecinales, periodismo barrial, Buenos Aires, AMV, noticias barriales, comunas porteñas, periódicos zonales, radios vecinales" />
+    <meta name="geo.region" content="AR-C" />
+    <meta name="geo.placename" content="Ciudad Autónoma de Buenos Aires" />
     <meta name="theme-color" content="#ed1c24" />
-    <title>AMV — Asociación de Medios Vecinales</title>
+    <meta name="color-scheme" content="light" />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="icon" type="image/png" href="/logo-amv.png" />
+    <link rel="apple-touch-icon" href="/logo-amv.png" />
+    <link rel="sitemap" href="/sitemap.xml" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:site_name" content="AMV — Asociación de Medios Vecinales" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:image:secure_url" content={socialImage} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="368" />
+    <meta property="og:image:height" content="368" />
+    <meta property="og:image:alt" content="Logo de la Asociación de Medios Vecinales" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+    <meta name="twitter:image" content={socialImage} />
+    <meta name="twitter:image:alt" content="Logo de la Asociación de Medios Vecinales" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)}></script>
   </head>
   <body>
     <header class="site-header">
